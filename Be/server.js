@@ -38,6 +38,6 @@ app.use((err, req, res, next) => {
 
 app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log(
-    `✅ Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
+    `✅ Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT}`
   );
 });

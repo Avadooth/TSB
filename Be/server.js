@@ -36,6 +36,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Server error" });
 });
 
-app.listen(5000, "0.0.0.0", () => {
-  console.log("✅ Test server running on http://localhost:5000");
+app.listen(process.env.PORT, "0.0.0.0", () => {
+  console.log(
+    `✅ Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
+  );
 });

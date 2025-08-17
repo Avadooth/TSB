@@ -1,0 +1,242 @@
+:root{
+  --bg: #f8fafc;            /* gray-50 */
+  --card-bg: #ffffff;
+  --muted-border: #e6e9ee;  /* border */
+  --input-border: #e6e8eb;  /* input border */
+  --text: #0f172a;          /* slate-900 */
+  --muted: #64748b;         /* slate-500 */
+  --accent: #2563eb;        /* blue-600 */
+  --accent-hover: #1e4fc4;
+  --card-shadow: 0 8px 20px rgba(15,23,42,0.06);
+  --radius-lg: 20px;
+  --radius-md: 8px;
+  --gap: 16px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+}
+
+/* Layout */
+.signin-container {
+  background: var(--bg);
+  min-height: 100vh;
+  display: block;
+}
+
+.signin-viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.signin-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Card */
+.signin-card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--muted-border);
+  box-shadow: var(--card-shadow);
+}
+
+@media (min-width: 640px) {
+  .signin-card {
+    padding: 32px;
+  }
+}
+
+/* Title */
+.signin-title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Form */
+.signin-form {
+  margin-top: 36px;
+}
+
+.form-field {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Inputs */
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--input-border);
+  font-size: 14px;
+  color: var(--text);
+  background: transparent;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: #94a3b8; /* placeholder gray */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.06);
+}
+
+/* Row for remember + forgot */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Remember */
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-checkbox {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  border: 1px solid var(--input-border);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background: white;
+  cursor: pointer;
+}
+
+.remember-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+  /* simple check mark using ::after */
+  background-image: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0) 45%), linear-gradient(-45deg, transparent 45%, rgba(255,255,255,0) 45%);
+  /* use SVG check for broader support - fallback: no check */
+}
+
+.remember-checkbox:focus {
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.06);
+  outline: none;
+}
+
+.remember-text {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Forgot link */
+.forgot-link {
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover,
+.forgot-link:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Submit button */
+.submit-field {
+  margin-top: 28px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.12s ease, transform 0.06s ease;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+}
+
+.submit-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.12);
+}
+
+/* Signup note */
+.signup-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.signup-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.signup-link:hover,
+.signup-link:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Small utility */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .signin-card {
+    padding: 20px;
+  }
+
+  .signin-title {
+    font-size: 24px;
+  }
+}

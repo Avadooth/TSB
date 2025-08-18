@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://tsb-nelt.onrender.com",
+  baseURL: "https://tsb-nelt.onrender.com/api",
     withCredentials: true, // Use your backend port
 });
 

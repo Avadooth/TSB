@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import ImageGrid from "../components/ImageGrid";
 
 export default function Dashboard() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(null);
   const[user,setUser] = useState({});
 
   const fetchImages = async () => {
@@ -25,7 +25,7 @@ export default function Dashboard() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar
-        user={{ name:user.name , email: user.email }} // 👈 pass user data to Navbar
+         user={user || { name: "", email: "" }} // 👈 pass user data to Navbar
         onUpload={(newImage) => setImages([newImage, ...images])} // 👈 handle upload
       />
       <ImageGrid images={images} />

@@ -15,6 +15,7 @@ const setToken = (res, id) => {
 
 export const signup = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log("Signup request body:", req.body);
   if (!name || !email || !password)
     return res.status(400).json({ message: "Missing fields" });
 

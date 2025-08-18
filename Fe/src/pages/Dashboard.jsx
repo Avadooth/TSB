@@ -9,7 +9,7 @@ export default function Dashboard() {
   const fetchImages = async () => {
     try {
       const res = await API.get("/images");
-      console.log("Fetched images:", res.data);
+      console.log("Fetched images:", res.data.images);
       setImages(res.data);
     } catch (err) {
       console.error("Failed to fetch images:", err);

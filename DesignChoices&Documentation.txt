@@ -1,0 +1,68 @@
+Design Choices & Documentation
+1. Overview
+
+This document explains the design decisions and architecture of the Image Management Platform built for the assignment.
+It covers the frontend, backend, authentication flow, and Cloudinary integration.
+
+2. Frontend Design Choices
+
+Framework: React.js was used for building the frontend due to its component-based architecture and ease of managing state with hooks.
+
+Styling: Tailwind CSS was used for rapid styling and responsiveness.
+
+Routing: React Router was used for navigation (signup, login, dashboard).
+
+Error Handling: Error and loading states are displayed to the user during API calls.
+
+Image Gallery: Images are displayed in a responsive masonry/grid layout for a clean and user-friendly experience.
+
+3. Backend Design Choices
+
+Framework: Node.js with Express.js was chosen for building RESTful APIs.
+
+Database: MongoDB was used for storing user credentials and image metadata because of its flexibility with JSON-like documents.
+
+Authentication: JWT (stored in httpOnly cookies) ensures secure authentication and prevents XSS attacks.
+
+Middleware: Custom middleware was implemented to verify tokens and authorize access to protected routes.
+
+4. Authentication Flow
+
+Signup: User provides name, email, and password. Password is hashed with bcrypt before storing in DB.
+
+Login: User submits credentials, verified against DB, and a JWT is issued and stored in an httpOnly cookie.
+
+Auth Middleware: Each request checks for JWT validity. Only authenticated users can access their images or upload new ones.
+
+Logout: Clears the cookie and invalidates the session on the client side.
+
+5. Cloudinary Integration
+
+Image Storage: Cloudinary was integrated for secure and scalable image storage.
+
+Upload Flow: Images are uploaded via multer middleware and streamed directly to Cloudinary.
+
+Metadata: After upload, image metadata (publicId, secure URL, original filename) is stored in MongoDB.
+
+Access: Users only see their own uploaded images, fetched securely from the backend.
+
+6. Security Considerations
+
+httpOnly Cookies: Prevent XSS attacks by not exposing tokens to client-side JS.
+
+Validation: Only image file types are allowed during upload using multer fileFilter.
+
+Authorization: Ensures users only access their own images by checking userId against JWT payload.
+
+7. Deployment
+
+Backend: Deployed on Render.
+
+Frontend: Deployed on Vercel with routing configured to handle React Router paths.
+
+Environment Variables: Managed securely via .env files (API keys, DB URIs, Cloudinary credentials).
+
+8. Conclusion
+
+This setup balances simplicity and security while meeting the assignment requirements.
+It ensures a smooth user experience with secure authentication, reliable image storage, and responsive design.

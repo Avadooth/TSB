@@ -1,3 +1,17 @@
+Environment file
+
+  PORT=5000
+  MONGO_URI=mongodb+srv://avadoothjoshi:shaddha123@cluster0.79zmhpg.mongodb.net/TSB?retryWrites=true&w=majority&appName=Cluster0
+  JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+  COOKIE_NAME=tsb_cookie
+  CLOUDINARY_CLOUD_NAME=dripva2cr
+  CLOUDINARY_API_KEY=818933149358182
+  CLOUDINARY_API_SECRET=j6hVZL35b1l5LGDWBx3ZNQ-5wXQ
+  MAX_FILE_BYTES=6000000
+  NODE_ENV=production
+
+
+
 Design Choices & Documentation
 1. Overview
 

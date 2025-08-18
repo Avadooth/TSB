@@ -7,12 +7,13 @@ export const getMyImages = async (req, res) => {
   const Users= await User.findById(req.user.id).select("name email");
 
 
-  res.json(images, {
+  res.json({
     user: {
-      id: Users._id,
-      name: Users.name,
-      email: Users.email
-    }
+      id: user._id,
+      name: user.name,
+      email: user.email,
+    },
+    images,
   });
 };
 

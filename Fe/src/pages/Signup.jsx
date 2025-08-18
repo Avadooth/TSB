@@ -14,8 +14,8 @@ export default function Signup() {
     try {
       const response = await API.post("/auth/signup", form);
       setShowModal(true);
-    } catch {
-      alert("Signup failed");
+    } catch(e) {
+      alert("Signup failed",e.message);
     }
   };
   const handleModalOk = () => {

@@ -28,7 +28,7 @@ export default function Dashboard() {
          user={user || { name: "", email: "" }} // 👈 pass user data to Navbar
         onUpload={(newImage) => setImages([newImage, ...images])} // 👈 handle upload
       />
-      <ImageGrid images={images} />
+      {/* <ImageGrid images={images} /> */}
     </div>
   );
 }

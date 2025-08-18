@@ -4,8 +4,8 @@ import Navbar from "../components/Navbar";
 import ImageGrid from "../components/ImageGrid";
 
 export default function Dashboard() {
-  const [images, setImages] = useState(null);
-  const[user,setUser] = useState({});
+  const [images, setImages] = useState([]);
+  const[user,setUser] = useState(null);
 
   const fetchImages = async () => {
     try {

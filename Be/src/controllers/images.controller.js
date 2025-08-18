@@ -4,14 +4,14 @@ import User from "../models/User.js";
 
 export const getMyImages = async (req, res) => {
   const images = await Image.find({ userId: req.user.id }).sort({ createdAt: -1 });
-  const User= await User.findById(req.user.id).select("name email");
+  const Users= await User.findById(req.user.id).select("name email");
 
 
   res.json(images, {
     user: {
-      id: User._id,
-      name: User.name,
-      email: User.email
+      id: Users._id,
+      name: Users.name,
+      email: Users.email
     }
   });
 };

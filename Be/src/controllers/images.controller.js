@@ -9,9 +9,9 @@ export const getMyImages = async (req, res) => {
 
   res.json({
     user: {
-      id: user._id,
-      name: user.name,
-      email: user.email,
+      id: Users._id,
+      name: Users.name,
+      email: Users.email,
     },
     images,
   });

@@ -1,7 +1,6 @@
 import cloudinary from "../config/cloudinary.js";
 import Image from "../models/Image.js";
 import User from "../models/User.js";
-import User from "../models/User.js";
 
 export const getMyImages = async (req, res) => {
   const images = await Image.find({ userId: req.user.id }).sort({ createdAt: -1 });

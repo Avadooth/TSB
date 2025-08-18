@@ -52,7 +52,7 @@ export default function Navbar({ user, onUpload }) {
               </div>
               <button
                 onClick={logout}
-                className="w-full text-left px-4 py-3 hover:bg-red-500 hover:text-white transition"
+                className="w-full text-left px-4 py-3 hover:bg-red-500 hover:rounded-lg hover:text-white transition"
               >
                 Logout
               </button>

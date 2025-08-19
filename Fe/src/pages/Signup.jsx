@@ -9,7 +9,6 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    console.log("Form data:", form);
     e.preventDefault();
     try {
       const response = await API.post("/auth/signup", form);

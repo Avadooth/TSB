@@ -11,7 +11,6 @@ const PrivateRoute = ({ children }) => {
     const checkAuth = async () => {
       try {
        const data= await API.get("/auth/check"); // backend endpoint to verify token
-       console.log("Auth check response:", data);
         setIsAuthenticated(true);
       } catch (err) {
         setIsAuthenticated(false);

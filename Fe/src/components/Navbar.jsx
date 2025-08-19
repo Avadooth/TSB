@@ -7,8 +7,6 @@ export default function Navbar({ user, onUpload }) {
   const [isOpen, setIsOpen] = useState(false);
   const [uploadOpen, setUploadOpen] = useState(false); // 👈 controls upload modal
 
-  console.log("Navbar user:", user);
-
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");

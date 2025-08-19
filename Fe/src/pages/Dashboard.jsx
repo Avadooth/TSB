@@ -10,7 +10,6 @@ export default function Dashboard() {
   const fetchImages = async () => {
     try {
       const res = await API.get("/images");
-      console.log("Fetched imagess:", res.data.images);
       setImages(res.data.images);
       setUser(res.data.user); // 👈 set user data
     } catch (err) {

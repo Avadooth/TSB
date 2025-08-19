@@ -9,7 +9,6 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.verifyPassword = async function (password) {
   const match = await bcrypt.compare(password, this.passwordHash);
-  console.log("Password check:", password, this.passwordHash, "=>", match);
   return match;
 };
 

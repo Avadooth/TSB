@@ -12,7 +12,6 @@ export default function Login() {
     try {
       const res = await API.post("/auth/login", form);
 
-      console.log("Login response:", res.data);
       if (res.data.success) {
         navigate("/dashboard");
       } else {
